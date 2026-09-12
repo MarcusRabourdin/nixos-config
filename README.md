@@ -3,7 +3,7 @@
 ## Setup on new machine
 
 ```bash
-sudo git clone {url} /etc/nixos
+sudo git clone git@github.com:MarcusRabourdin/nixos-config.git /etc/nixos
 cd /etc/nixos
 sudo chowm -R $USER:users /etc/nixos
 nixos-generate-config --show-hardware-config > hardware-configuration.nix
