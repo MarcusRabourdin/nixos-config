@@ -29,6 +29,13 @@
       export LESS_TERMCAP_so=$'\e[1;44;33m'
       export LESS_TERMCAP_ue=$'\e[0m'
       export LESS_TERMCAP_us=$'\e[1;36m'
+
+      nrs() {
+        cd /etc/nixos &&
+        sudo git add -A &&
+        sudo git commit -m "auto: $(date +%Y-%m-%d_%H:%M:%S)" --allow-empty;
+        sudo nixos-rebuild switch --flake .
+        }
       '';
   };
 
