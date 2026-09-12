@@ -11,6 +11,8 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
   let
+    system = "x86_64-linux";              # ← à ajouter
+    pkgs = nixpkgs.legacyPackages.${system};  # ← à ajouter
     mkHost = hostname: nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -23,12 +25,11 @@
         }
       ];
     };
-    in {
-      nixosConfigurations = {
-         main-nixos = mkHost "main-nixos";
-         # nixos-laptop = mkHost "nixos-laptop"
-      };
-      
+  in {
+    nixosConfigurations = {
+       main-nixos = mkHost "main-nixos";
+     };
+
     packages.${system}.tools = pkgs.buildEnv {
       name = "blue-tools";
       paths = import ./packages/packages.nix pkgs;
