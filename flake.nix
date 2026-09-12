@@ -25,7 +25,7 @@
     };
     in {
       nixosConfigurations = {
-         nixos-desktop = mkHost "main-nixos";
+         main-nixos = mkHost "main-nixos";
          # nixos-laptop = mkHost "nixos-laptop"
       };
     };
