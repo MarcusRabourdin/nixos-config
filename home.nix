@@ -24,6 +24,10 @@
     pavucontrol
   ];
 
+  home.sessionPath = [
+    "$HOME/scripts"
+  ];
+
 
   # ============================== imports ================================== #
   
