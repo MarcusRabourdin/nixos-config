@@ -9,11 +9,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, home-manager, ... }:
+  let
+    mkHost = hostname: nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./hosts/${hostname}/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -22,5 +23,11 @@
         }
       ];
     };
+    in {
+      nixosConfigurations = {
+         nixos-desktop = mkHost "main-nixos";
+         # nixos-laptop = mkHost "nixos-laptop"
+      };
+    }
   };
 }

@@ -34,7 +34,7 @@
         cd /etc/nixos &&
         sudo git add -A &&
         sudo git commit -m "auto: $(date +%Y-%m-%d_%H:%M:%S)" --allow-empty;
-        sudo nixos-rebuild switch --flake .
+        sudo nixos-rebuild switch --flake .#main-nixos
         }
       '';
   };
