@@ -29,5 +29,10 @@
          # nixos-laptop = mkHost "nixos-laptop"
       };
     };
+
+    packages.${system}.tools = pkgs.buildEnv {
+      name = "blue-tools";
+      paths = import ./packages/packages.nix pkgs;
+    };
 }
 

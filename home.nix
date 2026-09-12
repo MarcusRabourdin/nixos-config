@@ -9,20 +9,7 @@
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [
-    gcc
-    pciutils
-    cmake
-    openssl
-    pkg-config
-    ninja
-    git
-    nodejs
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    tree
-    pavucontrol
-  ];
+  home.packages = import ./packages/packages.nix pkgs;
 
   home.sessionPath = [
     "$HOME/scripts"
