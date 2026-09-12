@@ -3,4 +3,3 @@ hardware-configuration.nix
 result
 result-*
 .direnv/
-EOF
