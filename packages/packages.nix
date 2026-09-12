@@ -11,4 +11,5 @@ pkgs: with pkgs; [
   nodePackages.typescript-language-server
   tree
   pavucontrol
+  helix
 ]
