@@ -28,6 +28,6 @@
          nixos-desktop = mkHost "main-nixos";
          # nixos-laptop = mkHost "nixos-laptop"
       };
-    }
-  };
+    };
 }
+
