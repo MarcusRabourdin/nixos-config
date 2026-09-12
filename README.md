@@ -9,4 +9,3 @@ sudo chowm -R $USER:users /etc/nixos
 nixos-generate-config --show-hardware-config > hardware-configuration.nix
 sudo nixos-rebuild swith --flake
 ```
-EOF
