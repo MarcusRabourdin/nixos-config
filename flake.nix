@@ -28,7 +28,7 @@
             useGlobalPkgs = true;
             useUserPackahes = true;
             users.blue = import ./home.nix;
-          }
+          };
         }
 
       ];
