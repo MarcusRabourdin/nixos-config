@@ -11,20 +11,30 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
   let
-    system = "x86_64-linux";              # ← à ajouter
-    pkgs = nixpkgs.legacyPackages.${system};  # ← à ajouter
+    system = "x86_64-linux";              
+    pkgs = nixpkgs.legacyPackages.${system};
+
+    # mkHost is a function with 'hostname' as argument
     mkHost = hostname: nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system;
+
       modules = [
         ./hosts/${hostname}/configuration.nix
         home-manager.nixosModules.home-manager
+
+        # Other module 
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.blue = import ./home.nix;
+          home.manager = {
+            useGlobalPkgs = true;
+            useUserPackahes = true;
+            users.blue = import ./home.nix;
+          }
         }
+
       ];
+
     };
+
   in {
     nixosConfigurations = {
        main-nixos = mkHost "main-nixos";
