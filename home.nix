@@ -22,8 +22,6 @@
     ./dotfiles/helix.nix # helix
     ./dotfiles/zsh.nix # zsh
   ];
-
-  # ============================== Shell (zsh) ============================== #
   
   programs.dircolors = {
     enable = true;
