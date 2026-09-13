@@ -26,7 +26,7 @@
         {
           home-manager = {
             useGlobalPkgs = true;
-            useUserPackahes = true;
+            useUserPackages = true;
             users.blue = import ./home.nix;
           };
         }
