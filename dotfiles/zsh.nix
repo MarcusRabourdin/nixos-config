@@ -25,17 +25,17 @@
       test = "print test";
     };
 
-    shellInit = ''
-        autoload -Uz vcs_info
-        precmd() { vcs_info }
-
-        zstyle ':vcs_info:git:*' formats ' (%b)'
-        PROMPT='%F{cyan}%n@%m%f:%F{blue}%~%f%F{yellow}$vcs_info_msg_0_%f %# '
-      '';
 
     initContent = ''
-      export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
+      
+      autoload -Uz vcs_info
+      precmd() { vcs_info }
+      zstyle ':vcs_info:git:*' formats ' (%b)'
+      PROMPT='%F{cyan}%n@%m%f:%F{blue}%~%f%F{yellow}$vcs_info_msg_0_%f %# '
+
+      
+      export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
       export LESS_TERMCAP_mb=$'\e[1;32m'
       export LESS_TERMCAP_md=$'\e[1;34m'
       export LESS_TERMCAP_me=$'\e[0m'
