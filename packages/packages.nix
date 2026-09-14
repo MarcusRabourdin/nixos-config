@@ -12,4 +12,5 @@ pkgs: with pkgs; [
   tree
   pavucontrol
   helix
+  eza
 ]
