@@ -34,7 +34,7 @@
       zstyle ':vcs_info:git:*' formats ' (%b)'
       setopt PROMPT_SUBST
       # PROMPT='%F{cyan}%n@%m%f:%F{blue}%~%f%F{yellow}$vcs_info_msg_0_%f %# '
-      PROMPT='%F{cyan}%n%%F{blue}%2~%F{yellow}$vcs_info_msg_0_%f%# '
+      PROMPT='%F{cyan}%n:%F{blue}%2~%F{yellow}$vcs_info_msg_0_%f%# '
       
       export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
       export LESS_TERMCAP_mb=$'\e[1;32m'
