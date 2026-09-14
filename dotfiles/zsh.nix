@@ -19,6 +19,9 @@
       nomic = "./llama-embedding -hf keisuke-miyako/nomic-embed-text-v1.5-gguf-q8_0:Q8_0";
       sudo = "sudo -E";
       nrs = ''cd /etc/nixos && git add -A && git commit -m "nrs: $(date +%Y-%M-%d_%H:%M:%S)" --allow-empty && sudo nixos-rebuild switch --flake .#main-nixos && git push'';
+
+      gs = "git status";
+      gm = "git commit -m";
     };
 
     initContent = ''
