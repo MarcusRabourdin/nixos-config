@@ -22,6 +22,7 @@
 
       gs = "git status";
       gm = "git commit -m";
+      test = "print test";
     };
 
     initContent = ''
