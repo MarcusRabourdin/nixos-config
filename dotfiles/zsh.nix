@@ -25,7 +25,7 @@
       test = "print test";
     };
 
-    shellInit= ''
+    shellInit = ''
         autoload -Uz vcs_info
         precmd() { vcs_info }
 
