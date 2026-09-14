@@ -8,9 +8,10 @@
     autosuggestion.enable = true;
     
     shellAliases = {
-      ls = "ls --color=auto";
-      ll = "ls -lh --color=auto";
-      la = "ls -lAh --color=auto";
+      ls = "eza";
+      ll = "eza -la";
+      tree = "eza --tree";
+      
       grep = "grep --color=auto";
       egrep = "egrep --color=auto";
       fgrep = "gfrep --color=auto";
@@ -23,6 +24,11 @@
       gs = "git status";
       gm = "git commit -m";
       test = "print test";
+    };
+
+
+    sessionVariables = {
+      EZA_COLORS="*.nix=magenta:*.ts=blue:*.js=yellow";
     };
 
 
