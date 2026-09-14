@@ -26,12 +26,6 @@
       test = "print test";
     };
 
-
-    sessionVariables = {
-      EZA_COLORS="*.nix=magenta:*.ts=blue:*.js=yellow";
-    };
-
-
     initContent = ''
 
       
