@@ -39,18 +39,7 @@
       };
     };
   };
-
-  # ============================== PipreWire ==============================#
-
-  sound.enable = false;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enalbe = true;
-  };
-    
+   
   # ============================== Dotfiles ============================== #
 
   home.file.".config/i3/config".source = ./dotfiles/i3-config;
