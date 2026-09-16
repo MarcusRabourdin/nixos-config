@@ -19,6 +19,11 @@
         args = [ "--stdio" ];
       };
 
+    language-server.roslyn = {
+      command = "${pkgs.roslyn-ls}/bin/Microsoft.CodeAnalysis.LanguageServer";
+      args = ["--stdio" "--autoLoadProjects"]
+    };
+    
       language = [
         {
           name = "javascript";
@@ -35,6 +40,10 @@
         {
           name = "tsx";
           language-servers = [ "typescript-language-server" ];
+        }
+        {
+          name = "c-sharp";
+          language-servers = ["roslyn"];
         }
       ];
     };
