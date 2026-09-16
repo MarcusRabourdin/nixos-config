@@ -13,4 +13,5 @@ pkgs: with pkgs; [
   pavucontrol
   helix
   eza
+  python3
 ]
