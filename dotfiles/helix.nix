@@ -21,7 +21,7 @@
 
     language-server.roslyn = {
       command = "${pkgs.roslyn-ls}/bin/Microsoft.CodeAnalysis.LanguageServer";
-      args = ["--stdio" "--autoLoadProjects" "--logLevel" "Information" "--extensionLogDirectory" "/tmp/roslyn"];
+      args = ["--stdio" "--logLevel" "Information" "--extensionLogDirectory" "/tmp/roslyn"];
     };
     
       language = [
