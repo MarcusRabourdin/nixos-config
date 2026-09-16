@@ -51,7 +51,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enalbe = true;
-  }
+  };
     
   # ============================== Dotfiles ============================== #
 
