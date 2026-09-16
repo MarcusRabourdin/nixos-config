@@ -14,6 +14,6 @@ pkgs: with pkgs; [
   helix
   eza
   python3
-  dotnet-sdk
+  dotnet-sdk_9
   roslyn-ls
 ]
