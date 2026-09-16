@@ -16,4 +16,4 @@ pkgs: with pkgs; [
   python3
   dotnet-sdk
   roslyn-ls
-];
+]
