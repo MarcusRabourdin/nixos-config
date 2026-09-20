@@ -25,7 +25,7 @@
       gm = "git commit -m";
       test = "print test";
 
-      py = "python3"
+      py = "python3";
     };
 
     initContent = ''
