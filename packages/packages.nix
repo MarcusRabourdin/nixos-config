@@ -18,4 +18,5 @@ pkgs: with pkgs; [
   roslyn-ls
   ripgrep
   fd
+  tldr
 ]
