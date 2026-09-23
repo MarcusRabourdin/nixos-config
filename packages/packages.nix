@@ -20,4 +20,5 @@ pkgs: with pkgs; [
   fd
   tldr
   bat
+  flameshot
 ]
