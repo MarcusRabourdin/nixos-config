@@ -21,5 +21,5 @@ pkgs: with pkgs; [
   tldr
   bat
   flameshot
-  zoxyde
+  zoxide
 ]
