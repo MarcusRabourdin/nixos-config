@@ -22,4 +22,5 @@ pkgs: with pkgs; [
   bat
   flameshot
   zoxide
+  nmap
 ]
