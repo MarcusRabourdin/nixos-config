@@ -24,7 +24,7 @@
       gs = "git status";
       ga = "git add";
       gm = "git commit -m";
-      gp = "git push"
+      gp = "git push";
       test = "print test";
 
       py = "python3";
