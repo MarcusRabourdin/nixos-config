@@ -22,7 +22,9 @@
       nrs = ''cd /etc/nixos && git add -A && git commit -m "nrs: $(date +%Y-%M-%d_%H:%M:%S)" --allow-empty && sudo nixos-rebuild switch --flake .#main-nixos && git push'';
 
       gs = "git status";
+      ga = "git add";
       gm = "git commit -m";
+      gp = "git push"
       test = "print test";
 
       py = "python3";
