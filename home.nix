@@ -12,7 +12,7 @@
   home.packages = import ./packages/packages.nix pkgs;
 
   home.sessionPath = [
-    "$HOME/scripts";
+    "$HOME/scripts"
     "$HOME/scripts/pk"
   ];
 
