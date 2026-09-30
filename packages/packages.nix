@@ -23,4 +23,5 @@ pkgs: with pkgs; [
   flameshot
   zoxide
   nmap
+  sqlite
 ]
