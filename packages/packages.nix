@@ -25,4 +25,5 @@ pkgs: with pkgs; [
   nmap
   sqlite
   brightnessctl
+  pandoc
 ]
