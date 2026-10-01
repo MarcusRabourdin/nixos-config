@@ -21,9 +21,7 @@ pkgs: with pkgs; [
   tldr
   bat
   flameshot
-  zoxide
   nmap
-  sqlite
   brightnessctl
   pandoc
 ]
