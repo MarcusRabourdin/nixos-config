@@ -24,4 +24,5 @@ pkgs: with pkgs; [
   zoxide
   nmap
   sqlite
+  brightnessctl
 ]
