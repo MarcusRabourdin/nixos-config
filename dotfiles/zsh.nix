@@ -25,6 +25,7 @@
       ga = "git add";
       gm = "git commit -m";
       gp = "git push";
+      gpu = "git push -u origin"
       test = "print test";
 
       py = "python3";
