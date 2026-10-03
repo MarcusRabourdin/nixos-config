@@ -24,4 +24,5 @@ pkgs: with pkgs; [
   nmap
   brightnessctl
   pandoc
+  cowsay
 ]
