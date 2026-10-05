@@ -1,28 +1,18 @@
 pkgs: with pkgs; [
   gcc
-  pciutils
   cmake
   openssl
   pkg-config
   ninja
-  git
   nodejs
   nodePackages.typescript
   nodePackages.typescript-language-server
-  tree
-  pavucontrol
-  helix
-  eza
   python3
   dotnet-sdk_9
   roslyn-ls
-  ripgrep
-  fd
   tldr
-  bat
   flameshot
   nmap
-  brightnessctl
   pandoc
   cowsay
 ]

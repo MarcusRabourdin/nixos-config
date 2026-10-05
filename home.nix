@@ -9,7 +9,8 @@
 
   programs.home-manager.enable = true;
 
-  home.packages = import ./packages/packages.nix pkgs;
+  home.packages = (import ./packages/essential.nix pkgs)
+    ++ (import ./packages/currently_usefull.nix pkgs);
 
   home.sessionPath = [
     "$HOME/scripts"
