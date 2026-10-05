@@ -9,7 +9,7 @@
 
   programs.home-manager.enable = true;
 
-  home.packages = (import ./packages/essential.nix pkgs)
+  home.packages = (import ./packages/core.nix pkgs)
     ++ (import ./packages/currently_usefull.nix pkgs);
 
   home.sessionPath = [
