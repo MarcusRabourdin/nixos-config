@@ -15,4 +15,5 @@ pkgs: with pkgs; [
   nmap
   pandoc
   cowsay
+  jq
 ]
