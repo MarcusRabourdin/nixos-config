@@ -42,7 +42,8 @@
 
     packages.${system}.tools = pkgs.buildEnv {
       name = "blue-tools";
-      paths = import ./packages/packages.nix pkgs;
+      paths = (import ./packages/core.nix pkgs)
+       ++ (import ./packages/currently_usefull.nix) pkgs;
     };
   };
 }

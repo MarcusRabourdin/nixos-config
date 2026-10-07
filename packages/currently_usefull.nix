@@ -16,4 +16,5 @@ pkgs: with pkgs; [
   pandoc
   cowsay
   jq
+  cloudflared
 ]
