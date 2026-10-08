@@ -11,4 +11,5 @@ pkgs: with pkgs; [
   flameshot
   brightnessctl
   zoxide
+  nftables
 ]
