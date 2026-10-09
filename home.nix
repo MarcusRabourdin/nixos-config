@@ -23,6 +23,7 @@ in
       "${configurationPath}/bin/pk"
       "${configurationPath}/bin/hdmi"
       "${configurationPath}/bin/bluetooth"
+      "${configurationPath}/bin/utils"
     ];
     
       
