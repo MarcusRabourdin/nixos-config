@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  configurationPath = "/etc/nixos";
+in
 {
   # ============================== Home ============================== #
 
@@ -12,12 +14,17 @@
   home.packages = (import ./packages/core.nix pkgs)
     ++ (import ./packages/currently_usefull.nix pkgs);
 
-  home.sessionPath = [
-    "$HOME/scripts"
-    "$HOME/scripts/pk"
-  ];
+   home.sessionVariables = {
+      CONFIGURATION_PATH = configurationPath;
+    };
 
-
+    home.sessionPath = [
+      "${configurationPath}/bin"
+      "${configurationPath}/bin/pk"
+      "${configurationPath}/bin/hdmi"
+    ];
+    
+      
   # ============================== imports ================================== #
   
  imports = [
