@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+
+cd "$HOME/pk/web-app/"
+tar -cvf web-app.tar eslint.config.js index.html package* src tsconfig.* vite.config.ts
+mv web-app.tar "$HOME/pk/"
+
+cd "$HOME/pk/server"
+tar -cvf server.tar Controllers Repositories Services export Program.cs server.csproj server.http Models Properties appsettings.Development.json appsettings.json
+mv server.tar "$HOME/pk/"

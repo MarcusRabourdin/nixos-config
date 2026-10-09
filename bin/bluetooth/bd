@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+bluetoothctl connect E4:58:BC:C2:72:C2

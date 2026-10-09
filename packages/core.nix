@@ -10,6 +10,5 @@ pkgs: with pkgs; [
   bat
   flameshot
   brightnessctl
-  zoxide
   nftables
 ]

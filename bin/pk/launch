@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+procs='client client srv firefox'
+host=' http://localhost:'
+ports='5173 5174'
+command='alacritty --command'
+
+for proc in $procs; do
+    if [ $proc == "firefox" ]; then
+        sleep 1 # wait for the clients
+        for port in $ports; do
+            $command $proc $host$port &
+        done
+    else
+        $command $proc &
+    fi
+done
+
+
