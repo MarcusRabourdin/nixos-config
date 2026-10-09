@@ -6,4 +6,4 @@
 
 ## Script rules
   - Each script must use `set -e` to avoid undefined behavior
-  - Each script must be named using this format: `<category_name_first_letter><binary_name>`
+  - Each script must be named using this format: `<category_name_first_letter><binary_name>` unless for utils/ or for non-permanent scripts
