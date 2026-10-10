@@ -18,4 +18,5 @@ with pkgs; [
   cowsay
   jq
   cloudflared
+  google-chrome
 ]
