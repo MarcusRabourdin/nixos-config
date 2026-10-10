@@ -1,10 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running 'nixos-help').
-
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -51,7 +52,7 @@
 
   # ============================== Nix ============================== #
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -90,8 +91,8 @@
     isNormalUser = true;
     description = "Blue";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [];
   };
 
   # ============================== Hardware ============================== #
@@ -125,7 +126,7 @@
   ];
 
   # Needed so zsh completion files installed by system packages are found.
-  environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = ["/share/zsh"];
 
   # ============================== State version ============================== #
 

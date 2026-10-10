@@ -9,42 +9,44 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
-  let
-    system = "x86_64-linux";              
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  }: let
+    system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
 
     # mkHost is a function with 'hostname' as argument
-    mkHost = hostname: nixpkgs.lib.nixosSystem {
-      inherit system;
+    mkHost = hostname:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
 
-      modules = [
-        ./hosts/${hostname}/configuration.nix
-        home-manager.nixosModules.home-manager
+        modules = [
+          ./hosts/${hostname}/configuration.nix
+          home-manager.nixosModules.home-manager
 
-        # Other module 
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.blue = import ./home.nix;
-          };
-        }
-
-      ];
-
-    };
-
+          # Other module
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.blue = import ./home.nix;
+            };
+          }
+        ];
+      };
   in {
     nixosConfigurations = {
-       main-nixos = mkHost "main-nixos";
-     };
+      main-nixos = mkHost "main-nixos";
+    };
 
     packages.${system}.tools = pkgs.buildEnv {
       name = "blue-tools";
-      paths = (import ./packages/core.nix pkgs)
-       ++ (import ./packages/currently_usefull.nix) pkgs;
+      paths =
+        (import ./packages/core.nix pkgs)
+        ++ (import ./packages/currently_usefull.nix) pkgs;
     };
   };
 }
-

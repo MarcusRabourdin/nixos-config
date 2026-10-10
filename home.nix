@@ -1,8 +1,10 @@
-{ config, pkgs, ... }:
-let
-  configurationPath = "/etc/nixos";
-in
 {
+  config,
+  pkgs,
+  ...
+}: let
+  configurationPath = "/etc/nixos";
+in {
   # ============================== Home ============================== #
 
   home.username = "blue";
@@ -11,29 +13,29 @@ in
 
   programs.home-manager.enable = true;
 
-  home.packages = (import ./packages/core.nix pkgs)
+  home.packages =
+    (import ./packages/core.nix pkgs)
     ++ (import ./packages/currently_usefull.nix pkgs);
 
-   home.sessionVariables = {
-      CONFIGURATION_PATH = configurationPath;
-    };
+  home.sessionVariables = {
+    CONFIGURATION_PATH = configurationPath;
+  };
 
-    home.sessionPath = [
-      "${configurationPath}/bin"
-      "${configurationPath}/bin/pk"
-      "${configurationPath}/bin/hdmi"
-      "${configurationPath}/bin/bluetooth"
-      "${configurationPath}/bin/utils"
-    ];
-    
-      
+  home.sessionPath = [
+    "${configurationPath}/bin"
+    "${configurationPath}/bin/pk"
+    "${configurationPath}/bin/hdmi"
+    "${configurationPath}/bin/bluetooth"
+    "${configurationPath}/bin/utils"
+  ];
+
   # ============================== imports ================================== #
-  
- imports = [
+
+  imports = [
     ./dotfiles/helix.nix # helix
     ./dotfiles/zsh.nix # zsh
   ];
-  
+
   programs.dircolors = {
     enable = true;
     enableZshIntegration = true;
@@ -50,7 +52,7 @@ in
       };
     };
   };
-   
+
   # ============================== Dotfiles ============================== #
 
   home.file.".config/i3/config".source = ./dotfiles/i3-config;

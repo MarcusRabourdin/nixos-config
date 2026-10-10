@@ -1,12 +1,14 @@
-{config, pkgs, ...}:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
-    
+
     shellAliases = {
       # ls/tree
       ls = "eza";
@@ -37,14 +39,14 @@
     };
 
     initContent = ''
-      
+
       autoload -Uz vcs_info
       precmd() { vcs_info }
       zstyle ':vcs_info:git:*' formats ' (%b)'
       setopt PROMPT_SUBST
       # PROMPT='%F{cyan}%n@%m%f:%F{blue}%~%f%F{yellow}$vcs_info_msg_0_%f %# '
       PROMPT='%F{cyan}%n:%F{blue}%2~%F{yellow}$vcs_info_msg_0_%f%# '
-      
+
       export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
       export LESS_TERMCAP_mb=$'\e[1;32m'
       export LESS_TERMCAP_md=$'\e[1;34m'
@@ -53,7 +55,6 @@
       export LESS_TERMCAP_so=$'\e[1;44;33m'
       export LESS_TERMCAP_ue=$'\e[0m'
       export LESS_TERMCAP_us=$'\e[1;36m'
-     '';
+    '';
   };
-
 }
