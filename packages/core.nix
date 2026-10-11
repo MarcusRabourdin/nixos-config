@@ -13,4 +13,5 @@ with pkgs; [
   brightnessctl
   nftables
   alejandra
+  unzip
 ]
