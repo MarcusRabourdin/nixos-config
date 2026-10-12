@@ -7,12 +7,18 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    omdrop = {
+      url = "path:/home/blue/bordel/omdrop-owl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    omdrop,
     ...
   }: let
     system = "x86_64-linux";
@@ -26,6 +32,7 @@
         modules = [
           ./hosts/${hostname}/configuration.nix
           home-manager.nixosModules.home-manager
+          omdrop.nixosModules.default
 
           # Other module
           {
