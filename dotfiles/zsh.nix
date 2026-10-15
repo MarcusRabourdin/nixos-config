@@ -36,7 +36,7 @@
       # other
       py = "python3";
       mkcd = ". mkcd";
-      cd = ". cd";
+      cd = ". c";
     };
 
     initContent = ''
