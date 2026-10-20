@@ -7,5 +7,5 @@ tar -cvf web-app.tar eslint.config.js index.html package* src tsconfig.* vite.co
 mv web-app.tar "$HOME/pk/"
 
 cd "$HOME/pk/server"
-tar -cvf server.tar Controllers Repositories Services export Program.cs server.csproj Models Properties appsettings.Development.json appsettings.json
+tar -cvf server.tar tests/ Controllers Repositories Services export Program.cs server.csproj Models Properties appsettings.Development.json appsettings.json
 mv server.tar "$HOME/pk/"
