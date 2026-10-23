@@ -141,4 +141,11 @@
   services.omdrop = {
     enable = true;
   };
+
+
+  # Artcraft
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 }
