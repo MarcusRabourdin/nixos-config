@@ -36,6 +36,7 @@
       # other
       py = "python3";
       mkcd = ". mkcd";
+      pavu = "pavucontrol";
     };
 
     initContent = ''
