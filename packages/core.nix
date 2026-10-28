@@ -14,4 +14,5 @@ with pkgs; [
   nftables
   alejandra
   unzip
+  lsof
 ]

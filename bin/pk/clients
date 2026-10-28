@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+host=' http://localhost:'
+ports='5173 5174 5175'
+
+for port in $ports; do
+	alacritty --command firefox $host$port &
+done
+

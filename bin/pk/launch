@@ -2,16 +2,14 @@
 
 set -e
 
-procs='client client srv firefox'
-host=' http://localhost:'
-ports='5173 5174'
+procs='client srv'
 command='alacritty --command'
+nb="$1"
 
 for proc in $procs; do
-    if [ $proc == "firefox" ]; then
-        sleep 1 # wait for the clients
-        for port in $ports; do
-            $command $proc $host$port &
+    if [[ $proc == "client" ]] && [[ -n "$1" ]]; then
+        for i in $(seq 1 $nb); do
+            $command client &
         done
     else
         $command $proc &
