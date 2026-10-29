@@ -18,4 +18,5 @@ with pkgs; [
   cowsay
   jq
   claude-code
+  github-cli
 ]
