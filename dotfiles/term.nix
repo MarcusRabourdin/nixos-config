@@ -4,12 +4,20 @@
   ...
 }:
   {
+    home.packages = [
+      pkgs.vt323
+      pkgs.hack-font
+    ];
+
+    fonts.fontconfig.enable = true;
     programs.alacritty = {
       enable = true;
       settings = {
+
         colors.primary = {
           background = "#000000";
           foreground = "#ffffff";
+          dim_foreground = "#828482";
         };
 
         window = {
@@ -18,11 +26,12 @@
           opacity = 0.5;
         };
 
-        font = {
+       font = {
           normal = {
             family = "Hack";
             style = "Regular";
           };
+          size = 11.25;
         }; 
           
       };
