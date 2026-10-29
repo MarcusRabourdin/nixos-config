@@ -63,13 +63,14 @@
     enable = true;
     windowManager.i3.enable = true;
     displayManager.lightdm.enable = true;
-
+    
     # Configure keymap in X11
     xkb = {
       layout = "us";
       variant = "";
     };
   };
+  services.displayManager.defaultSession = "none+i3";
 
   # ============================== Programs ============================== #
 

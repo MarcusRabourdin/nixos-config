@@ -34,6 +34,7 @@ in {
   imports = [
     ./dotfiles/helix.nix # helix
     ./dotfiles/zsh.nix # zsh
+    ./dotfiles/i3.nix # i3
   ];
 
   programs.dircolors = {
@@ -55,5 +56,5 @@ in {
 
   # ============================== Dotfiles ============================== #
 
-  home.file.".config/i3/config".source = ./dotfiles/i3-config;
+  # home.file.".config/i3/config".source = ./dotfiles/i3-config;
 }
