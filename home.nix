@@ -7,9 +7,11 @@
 in {
   # ============================== Home ============================== #
 
-  home.username = "blue";
-  home.homeDirectory = "/home/blue";
-  home.stateVersion = "25.11";
+  home = {
+    username = "blue";
+    homeDirectory = "/home/blue";
+    stateVersion = "25.11";
+  };
 
   programs.home-manager.enable = true;
 
@@ -35,6 +37,7 @@ in {
     ./dotfiles/helix.nix # helix
     ./dotfiles/zsh.nix # zsh
     ./dotfiles/i3.nix # i3
+    ./dotfiles/git.nix # git
   ];
 
   programs.dircolors = {
