@@ -11,6 +11,9 @@
           email = "marcus.rabourdin@epita.fr";
           name = "marcus";
         };
+        init.defaultBranch = "master";
+        safe.directory = "/etc/nixos";
+        pull.rebase = true;
       };
     };
 }
