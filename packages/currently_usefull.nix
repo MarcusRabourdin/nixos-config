@@ -17,5 +17,5 @@ with pkgs; [
   pandoc
   cowsay
   jq
-  cloudflared
+  claude-code
 ]
