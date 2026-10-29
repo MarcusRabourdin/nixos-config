@@ -20,10 +20,10 @@
 
         font = {
           normal = {
-            family = "monospace";
-            style = "Courier";
+            family = "Hack";
+            style = "Regular";
           };
-        };
+        }; 
           
       };
     };
