@@ -31,12 +31,12 @@ in {
     "${configurationPath}/bin/utils"
   ];
 
-  # ============================== imports ================================== #
 
   imports = [
     ./dotfiles/helix.nix # helix
     ./dotfiles/zsh.nix # zsh
     ./dotfiles/i3.nix # i3
+    ./dotfiles/term.nix # terminal
     ./dotfiles/git.nix # git
   ];
 
@@ -44,21 +44,6 @@ in {
     enable = true;
     enableZshIntegration = true;
   };
-
-  # ============================== Terminal (alacritty) ============================== #
-
-  xsession.windowManager.i3.config.terminal = "alacritty";
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      colors.primary = {
-        background = "#000000";
-        foreground = "#ffffff";
-      };
-    };
-  };
-
-  # ============================== Dotfiles ============================== #
 
   # home.file.".config/i3/config".source = ./dotfiles/i3-config;
 }
