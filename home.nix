@@ -47,6 +47,7 @@ in {
 
   # ============================== Terminal (alacritty) ============================== #
 
+  xsession.windowManager.i3.config.terminal = "alacritty";
   programs.alacritty = {
     enable = true;
     settings = {
