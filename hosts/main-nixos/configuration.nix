@@ -19,10 +19,14 @@
 
   # ============================ Networking ============================ #
 
-  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;
 
+  networking = {
+    hostName = "main-nixos";
+    networkmanager.enable = true;
+    nftables.enable = true;
+    firewall.checkReversePath = "loose";
+  };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -63,7 +67,7 @@
     enable = true;
     windowManager.i3.enable = true;
     displayManager.lightdm.enable = true;
-    
+
     # Configure keymap in X11
     xkb = {
       layout = "us";
@@ -76,6 +80,7 @@
 
   programs.firefox.enable = true;
   programs.zsh.enable = true;
+  programs.git.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -84,7 +89,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
- 
+
   # ============================== Users ============================== #
 
   # Define a user account. Don't forget to set a password with 'passwd'.
@@ -126,8 +131,6 @@
     vim
   ];
 
-  networking.firewall.checkReversePath = "loose";
-
   # Needed so zsh completion files installed by system packages are found.
   environment.pathsToLink = ["/share/zsh"];
 
@@ -140,12 +143,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
-  services.omdrop = {
-    enable = true;
-  };
-
-
   # Artcraft
   programs.appimage = {
     enable = true;

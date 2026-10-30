@@ -19,11 +19,15 @@
       grep = "grep --color=auto";
 
       # local IA
-      granite = "./llama cli -hf NikolayKozloff/granite-4.0-h-350m-Q8_0-GGUF:Q8_0";
+      granite = "./llama-cli -hf NikolayKozloff/granite-4.0-h-350m-Q8_0-GGUF:Q8_0";
       nomic = "./llama-embedding -hf keisuke-miyako/nomic-embed-text-v1.5-gguf-q8_0:Q8_0";
 
       # nixos rebuild switch + git push
-      nrs = ''cd /etc/nixos && sudo nixos-rebuild switch --flake .#main-nixos && git add -A && git commit -m "nrs: $(date +%Y-%m-%d_%H:%M:%S)" --allow-empty && git push'';
+      nrs = ''cd ${config.home.sessionVariables.CONFIGURATION_PATH} &&
+        git add -A &&
+        sudo nixos-rebuild switch --flake . &&
+        git commit -m "nrs: $(date +%Y-%m-%d_%H:%M:%S)" &&
+        git push'';
 
       # git shortcut
       gs = "git status";
@@ -31,16 +35,17 @@
       gm = "git commit -m";
       gp = "git push";
       gpu = "git push -u origin";
-      test = "print test";
 
       # other
       py = "python3";
-      mkcd = ". mkcd";
       pavu = "pavucontrol";
     };
 
     initContent = ''
 
+      mkcd() { mkdir -p -- "$1" && cd -- "$1"; }
+
+      
       autoload -Uz vcs_info
       precmd() { vcs_info }
       zstyle ':vcs_info:git:*' formats ' (%b)'

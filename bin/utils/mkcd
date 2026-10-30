@@ -1,7 +1,0 @@
-#!/bin/sh
-
-set -e
-
-FOLDER_NAME="$1"
-
-mkdir $FOLDER_NAME && cd ./$FOLDER_NAME/

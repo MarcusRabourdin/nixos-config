@@ -1,24 +1,20 @@
 pkgs:
 with pkgs; [
   gcc
+  claude-code
   cmake
   openssl
   pkg-config
   ninja
   nodejs
-  nodePackages.typescript
-  nodePackages.typescript-language-server
   python3
-  dotnet-sdk_9
-  roslyn-ls
+  typescript
+  dotnet-sdk_10
   tldr
-  flameshot
   nmap
   pandoc
   cowsay
   jq
-  claude-code
-  github-cli
   protonmail-desktop
-  protonvpn-gui
+  proton-vpn
 ]

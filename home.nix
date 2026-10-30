@@ -23,14 +23,14 @@ in {
     CONFIGURATION_PATH = configurationPath;
   };
 
-  home.sessionPath = [
-    "${configurationPath}/bin"
-    "${configurationPath}/bin/pk"
-    "${configurationPath}/bin/hdmi"
-    "${configurationPath}/bin/bluetooth"
-    "${configurationPath}/bin/utils"
+  home.sessionPath = map(dir: "${configurationPath}/bin/${dir}") [
+    "pk"
+    "hdmi"
+    "bluetooth"
   ];
 
+  # ~/config -> /etc/nixos
+  home.file."config".source = config.lib.file.mkOutOfStoreSymlink configurationPath;
 
   imports = [
     ./dotfiles/helix.nix # helix
@@ -45,5 +45,4 @@ in {
     enableZshIntegration = true;
   };
 
-  # home.file.".config/i3/config".source = ./dotfiles/i3-config;
 }
