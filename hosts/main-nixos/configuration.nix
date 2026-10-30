@@ -28,7 +28,7 @@
     networkingmanager.enable = true;
     networking.nftables.enable = true;
     firewall.checkReversePath = "loose";
-  }
+  };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -69,7 +69,7 @@
     enable = true;
     windowManager.i3.enable = true;
     displayManager.lightdm.enable = true;
-    
+
     # Configure keymap in X11
     xkb = {
       layout = "us";
@@ -82,7 +82,8 @@
 
   programs.firefox.enable = true;
   programs.zsh.enable = true;
-
+  programs.git.enable = true;
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -90,7 +91,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
- 
+
   # ============================== Users ============================== #
 
   # Define a user account. Don't forget to set a password with 'passwd'.
@@ -132,7 +133,6 @@
     vim
   ];
 
-
   # Needed so zsh completion files installed by system packages are found.
   environment.pathsToLink = ["/share/zsh"];
 
@@ -149,7 +149,6 @@
   services.omdrop = {
     enable = true;
   };
-
 
   # Artcraft
   programs.appimage = {
