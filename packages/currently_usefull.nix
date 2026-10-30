@@ -10,7 +10,6 @@ with pkgs; [
   typescript
   dotnet-sdk_9
   tldr
-  flameshot
   nmap
   pandoc
   cowsay
