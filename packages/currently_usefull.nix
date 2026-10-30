@@ -6,11 +6,9 @@ with pkgs; [
   pkg-config
   ninja
   nodejs
-  nodePackages.typescript
-  nodePackages.typescript-language-server
   python3
+  typescript
   dotnet-sdk_9
-  roslyn-ls
   tldr
   flameshot
   nmap
