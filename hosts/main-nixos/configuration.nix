@@ -19,14 +19,12 @@
 
   # ============================ Networking ============================ #
 
-  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;
-
+  
   networking = {
-    hostName = "nixos";
-    networkingmanager.enable = true;
-    networking.nftables.enable = true;
+    hostName = "main-nixos";
+    networkmanager.enable = true;
+    nftables.enable = true;
     firewall.checkReversePath = "loose";
   };
   # Configure network proxy if necessary
