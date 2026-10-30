@@ -20,7 +20,7 @@
   # ============================ Networking ============================ #
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  
+
   networking = {
     hostName = "main-nixos";
     networkmanager.enable = true;
@@ -81,7 +81,7 @@
   programs.firefox.enable = true;
   programs.zsh.enable = true;
   programs.git.enable = true;
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

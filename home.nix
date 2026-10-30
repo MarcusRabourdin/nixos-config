@@ -17,7 +17,8 @@ in {
 
   home.packages =
     (import ./packages/core.nix pkgs)
-    ++ (import ./packages/currently_usefull.nix pkgs);
+    ++ (import ./packages/currently_usefull.nix pkgs)
+    ++ (import ./packages/unfree.nix pkgs);
 
   home.sessionVariables = {
     CONFIGURATION_PATH = configurationPath;
