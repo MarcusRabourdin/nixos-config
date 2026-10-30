@@ -9,7 +9,7 @@ with pkgs; [
   nodejs
   python3
   typescript
-  dotnet-sdk_9
+  dotnet-sdk_10
   tldr
   nmap
   pandoc
