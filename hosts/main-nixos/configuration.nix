@@ -84,7 +84,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
+ 
   # ============================== Users ============================== #
 
   # Define a user account. Don't forget to set a password with 'passwd'.
@@ -124,7 +124,10 @@
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     vim
+    protonvpn-gui
   ];
+
+  networking.firewall.checkReversePath = "loose";
 
   # Needed so zsh completion files installed by system packages are found.
   environment.pathsToLink = ["/share/zsh"];
