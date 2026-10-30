@@ -11,4 +11,5 @@ with pkgs; [
   alejandra
   unzip
   lsof
+  xsel
 ]

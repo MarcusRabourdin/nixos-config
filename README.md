@@ -75,6 +75,8 @@ nix-shell -p git
 
 ### 2. Clone the repository in /etc/nixos
 
+The repository is public, so it can be cloned over HTTPS without authentication. The remote is switched to SSH at step 9.
+
 ```bash
 sudo mv /etc/nixos /etc/nixos.install
 ```
@@ -160,9 +162,29 @@ sudo reboot
 
 Log in as `blue`. From now on, `nrs` (or `sudo nixos-rebuild switch --flake .`) is enough: the configuration is selected from the hostname.
 
-### 9. Save the new machine
+### 9. Set up GitHub access and save the new machine
 
-Set up GitHub authentication (`gh auth login`, or an SSH key), then:
+Generate an SSH key **for this machine** (never copy a private key from another PC):
+
+```bash
+ssh-keygen -t ed25519 -C "blue@<hostname>"
+```
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+Add the printed public key on GitHub: *Settings → SSH and GPG keys → New SSH key*. Then switch the remote to SSH and check the connection:
+
+```bash
+git remote set-url origin git@github.com:MarcusRabourdin/nixos-config.git
+```
+
+```bash
+ssh -T git@github.com
+```
+
+It should answer `Hi MarcusRabourdin! You've successfully authenticated`. Then commit and push the new machine:
 
 ```bash
 git commit -m "hosts: add <hostname>"
@@ -174,6 +196,8 @@ git push
 
 You can delete `/etc/nixos.install` once everything works.
 
+If the machine is lost or reinstalled, remove its key from GitHub: one key per machine means only that one has to be revoked.
+
 ## Good to know
 
 - **Changing the hostname** → reboot, otherwise new windows can't open.
@@ -182,3 +206,4 @@ You can delete `/etc/nixos.install` once everything works.
 - **`home.sessionVariables` / `home.sessionPath`** are only loaded at login: log out and back in after changing them.
 - **"Git tree is dirty"** is only a warning: the build uses uncommitted changes, but new files must be `git add`-ed.
 - **Helix**: check language servers with `hx --health <language>`.
+- **GitHub CLI** (`gh`, configured in `dotfiles/git.nix`) is only needed for `gh pr`, `gh issue`, etc. Pushing uses the SSH key: the `git@github.com:` remote never goes through `gh`.
