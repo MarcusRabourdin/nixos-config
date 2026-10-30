@@ -1,6 +1,7 @@
 pkgs:
 with pkgs; [
   pciutils
+  claude-code
   pavucontrol
   eza
   ripgrep

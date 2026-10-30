@@ -10,24 +10,16 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
-    omdrop,
-    ...
+      ...
   }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-
     # mkHost is a function with 'hostname' as argument
     mkHost = hostname:
       nixpkgs.lib.nixosSystem {
-        inherit system;
-
         modules = [
           ./hosts/${hostname}/configuration.nix
           home-manager.nixosModules.home-manager
-          omdrop.nixosModules.default
 
           # Other module
           {
@@ -43,12 +35,7 @@
     nixosConfigurations = {
       main-nixos = mkHost "main-nixos";
     };
-
-    packages.${system}.tools = pkgs.buildEnv {
-      name = "blue-tools";
-      paths =
-        (import ./packages/core.nix pkgs)
-        ++ (import ./packages/currently_usefull.nix) pkgs;
-    };
+    
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
 }

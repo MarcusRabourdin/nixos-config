@@ -37,100 +37,10 @@
         "type": "github"
       }
     },
-    "omdrop": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "omdrop-awdl": "omdrop-awdl",
-        "omdrop-plugin": "omdrop-plugin",
-        "owl": "owl",
-        "radiotap": "radiotap"
-      },
-      "locked": {
-        "lastModified": 1791733292,
-        "narHash": "sha256-g241/XO/Q8j3W2Xacefg6TYnGpLUWs1212ILTzBTKwQ=",
-        "path": "/home/blue/bordel/omdrop-owl",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/blue/bordel/omdrop-owl",
-        "type": "path"
-      }
-    },
-    "omdrop-awdl": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1791527831,
-        "narHash": "sha256-GqxaM/5Qnj458AQPdHp1Jyfa6HK7tdybO6xDBbKUWc4=",
-        "owner": "brentkearney",
-        "repo": "omdrop-awdl",
-        "rev": "534f91a525337951ca19c311e53d333bd6d55100",
-        "type": "github"
-      },
-      "original": {
-        "owner": "brentkearney",
-        "repo": "omdrop-awdl",
-        "rev": "534f91a525337951ca19c311e53d333bd6d55100",
-        "type": "github"
-      }
-    },
-    "omdrop-plugin": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1791665779,
-        "narHash": "sha256-hdwHZjpOMEfTucxWH+ug3B7Oczycu9r6s8jQp6ewJ5g=",
-        "owner": "t4t5",
-        "repo": "omdrop-plugin",
-        "rev": "24f00386179bec9418f5e1021b6d030a52b5dc45",
-        "type": "github"
-      },
-      "original": {
-        "owner": "t4t5",
-        "repo": "omdrop-plugin",
-        "rev": "24f00386179bec9418f5e1021b6d030a52b5dc45",
-        "type": "github"
-      }
-    },
-    "owl": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1790421637,
-        "narHash": "sha256-66XhcUjfjha/xi0ae8Ip8j6R45sVDbtIhpe/hf0RcRE=",
-        "owner": "jedbillyb",
-        "repo": "owl",
-        "rev": "832d70f815c3d4a06a02117bf0fc5e868daa1ff0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jedbillyb",
-        "repo": "owl",
-        "rev": "832d70f815c3d4a06a02117bf0fc5e868daa1ff0",
-        "type": "github"
-      }
-    },
-    "radiotap": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1592817815,
-        "narHash": "sha256-UQ77vg0tIai8JGRajZrVzmETTvrIixxkA4YVkWr5HZc=",
-        "owner": "radiotap",
-        "repo": "radiotap-library",
-        "rev": "94984dd829a605a2d7af55241145c159607f3b30",
-        "type": "github"
-      },
-      "original": {
-        "owner": "radiotap",
-        "repo": "radiotap-library",
-        "rev": "94984dd829a605a2d7af55241145c159607f3b30",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "omdrop": "omdrop"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
