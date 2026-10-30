@@ -15,7 +15,6 @@ with pkgs; [
   pandoc
   cowsay
   jq
-  github-cli
   protonmail-desktop
   proton-vpn
 ]
