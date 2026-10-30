@@ -31,7 +31,6 @@ in {
     "${configurationPath}/bin/utils"
   ];
 
-
   imports = [
     ./dotfiles/helix.nix # helix
     ./dotfiles/zsh.nix # zsh

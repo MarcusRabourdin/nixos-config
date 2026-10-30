@@ -10,7 +10,7 @@
       typescript-language-server
       roslyn-ls
     ];
-    
+
     settings = {
       theme = "gruvbox";
       editor.cursor-shape = {
@@ -29,9 +29,8 @@
       language = [
         {
           name = "c-sharp";
-          language-servers = ["rosyln"];
+          language-servers = ["roslyn"];
         }
-        
       ];
     };
   };
