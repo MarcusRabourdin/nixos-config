@@ -12,7 +12,7 @@
   outputs = {
     nixpkgs,
     home-manager,
-      ...
+    ...
   }: let
     # mkHost is a function with 'hostname' as argument
     mkHost = hostname:
@@ -35,7 +35,7 @@
     nixosConfigurations = {
       main-nixos = mkHost "main-nixos";
     };
-    
+
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
 }
