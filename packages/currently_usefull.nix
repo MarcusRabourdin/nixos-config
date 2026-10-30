@@ -1,6 +1,7 @@
 pkgs:
 with pkgs; [
   gcc
+  claude-code
   cmake
   openssl
   pkg-config
