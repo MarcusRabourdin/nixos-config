@@ -24,7 +24,7 @@
 
       # nixos rebuild switch + git push
       nrs2 = ''cd /etc/nixos && sudo nixos-rebuild switch --flake .#main-nixos && git add -A && git commit -m "nrs: $(date +%Y-%m-%d_%H:%M:%S)" --allow-empty && git push'';
-      nrs = ''git -C ~/config add -A && sudo nixos-rebuild switch --flake ~/config && git commit -m "nrs: $(date +%Y-%m-%d_%H:%M:%S)" --allow-empty && git push'';
+      nrs = ''cd ~/config && git add -A && sudo nixos-rebuild switch --flake . && git commit -m "nrs: $(date +%Y-%m-%d_%H:%M:%S)" --allow-empty && git push'';
       # git shortcut
       gs = "git status";
       ga = "git add";
