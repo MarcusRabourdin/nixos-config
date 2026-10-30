@@ -8,7 +8,6 @@ with pkgs; [
   bat
   flameshot
   brightnessctl
-  nftables
   alejandra
   unzip
   lsof
