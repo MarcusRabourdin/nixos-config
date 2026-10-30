@@ -17,5 +17,5 @@ with pkgs; [
   jq
   github-cli
   protonmail-desktop
-  protonvpn-gui
+  proton-vpn
 ]
