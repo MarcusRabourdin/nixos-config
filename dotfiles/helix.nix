@@ -6,6 +6,11 @@
   programs.helix = {
     enable = true;
 
+    extraPackages = with pkgs; [
+      typescript-language-server
+      roslyn-ls
+    ];
+    
     settings = {
       theme = "gruvbox";
       editor.cursor-shape = {
@@ -16,37 +21,17 @@
     };
 
     languages = {
-      language-server.typescript-language-server = {
-        command = "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server";
-        args = ["--stdio"];
-      };
-
       language-server.roslyn = {
-        command = "${pkgs.roslyn-ls}/bin/Microsoft.CodeAnalysis.LanguageServer";
+        command = "Microsoft.CodeAnalysis.LanguageServer";
         args = ["--stdio" "--logLevel" "Information" "--extensionLogDirectory" "/tmp/roslyn"];
       };
 
       language = [
         {
-          name = "javascript";
-          language-servers = ["typescript-language-server"];
-        }
-        {
-          name = "typescript";
-          language-servers = ["typescript-language-server"];
-        }
-        {
-          name = "jsx";
-          language-servers = ["typescript-language-server"];
-        }
-        {
-          name = "tsx";
-          language-servers = ["typescript-language-server"];
-        }
-        {
           name = "c-sharp";
-          language-servers = ["roslyn"];
+          language-servers = ["rosyln"];
         }
+        
       ];
     };
   };
