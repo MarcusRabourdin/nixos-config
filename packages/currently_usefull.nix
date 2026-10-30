@@ -19,4 +19,6 @@ with pkgs; [
   jq
   claude-code
   github-cli
+  protonmail-desktop
+  protonvpn-gui
 ]
