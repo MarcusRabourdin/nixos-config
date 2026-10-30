@@ -23,13 +23,14 @@ in {
     CONFIGURATION_PATH = configurationPath;
   };
 
-  home.sessionPath = [
-    "${configurationPath}/bin"
-    "${configurationPath}/bin/pk"
-    "${configurationPath}/bin/hdmi"
-    "${configurationPath}/bin/bluetooth"
-    "${configurationPath}/bin/utils"
+  home.sessionPath = map(dir: "${configurationPath}/bin/${dir}") [
+    "pk"
+    "hdmi"
+    "bluetooth"
   ];
+
+  # ~/config -> /etc/nixos
+  home.file."config".source = config.lib.file.mkOutOfStoreSymlink configurationPath;
 
   imports = [
     ./dotfiles/helix.nix # helix

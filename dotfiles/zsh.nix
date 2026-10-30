@@ -23,8 +23,12 @@
       nomic = "./llama-embedding -hf keisuke-miyako/nomic-embed-text-v1.5-gguf-q8_0:Q8_0";
 
       # nixos rebuild switch + git push
-      nrs2 = ''cd /etc/nixos && sudo nixos-rebuild switch --flake .#main-nixos && git add -A && git commit -m "nrs: $(date +%Y-%m-%d_%H:%M:%S)" --allow-empty && git push'';
-      nrs = ''cd ~/config && git add -A && sudo nixos-rebuild switch --flake . && git commit -m "nrs: $(date +%Y-%m-%d_%H:%M:%S)" --allow-empty && git push'';
+      nrs = ''cd ${config.home.sessionVariables.CONFIGURATION_PATH} &&
+        git add -A &&
+        sudo nixos-rebuild switch --flake . &&
+        git commit -m "nrs: $(date +%Y-%m-%d_%H:%M:%S)" &&
+        git push'';
+
       # git shortcut
       gs = "git status";
       ga = "git add";

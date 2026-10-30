@@ -13,7 +13,6 @@
       };
 
       init.defaultBranch = "master";
-      safe.directory = "/etc/nixos";
       pull.rebase = true;
 
       alias = {
