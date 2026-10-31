@@ -4,6 +4,7 @@ set -e
 
 dotfiles=".bashrc .zshrc"
 
+
 write_rc_file() {
   local path="$1"
 

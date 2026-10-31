@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "confloose": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./confloose",
+        "type": "path"
+      },
+      "original": {
+        "path": "./confloose",
+        "type": "path"
+      },
+      "parent": []
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -24,21 +40,19 @@
     "nixpkgs": {
       "locked": {
         "lastModified": 1793294725,
-        "narHash": "sha256-loLMnbbS4KhmG2ln9EY6f0YMNCA273Yx02oWYQ9IMeE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
+        "narHash": "sha256-X+Mp4wtwS+b17lw2puLuzn9e63ZrMKFucvlIUG7xf8I=",
         "rev": "6f06d204d8f2d8761d9da78778745974a3216381",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.13164.6f06d204d8f2/nixexprs.tar.zst"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-26.05",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-26.05/nixexprs.tar.zst"
       }
     },
     "root": {
       "inputs": {
+        "confloose": "confloose",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
