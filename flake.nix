@@ -12,21 +12,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs = {
-    nixpkgs,
-    home-manager,
-    confloose,
-    ...
-  }: let
-    # mkHost is a function with 'hostname' as argument
+  
+  outputs = {nixpkgs, ...} @ inputs: let
     mkHost = hostname:
       nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/${hostname}/configuration.nix
-          home-manager.nixosModules.home-manager
-
-          # Other module
+          inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -41,9 +33,7 @@
       main-nixos = mkHost "main-nixos";
     };
 
-    packages = confloose.packages;
-
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-    
+    packages = inputs.confloose.packages;
+    formatter = builtins.mapAttrs(system: pkgs: pkgs.alejandra) nixpkgs.legacyPackages;
   };
 }
