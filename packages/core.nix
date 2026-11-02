@@ -6,10 +6,10 @@ with pkgs; [
   ripgrep
   fd
   bat
-  flameshot
   brightnessctl
   alejandra
   unzip
   lsof
   xsel
+  flameshot
 ]
