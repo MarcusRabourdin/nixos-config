@@ -9,6 +9,7 @@ write_rc_file() {
   local path="$1"
 
   echo "alias ls='echo caca'" >> "$path"
+  echo "set -e" >> "$path"
 }
 
 handle_protected_file()
