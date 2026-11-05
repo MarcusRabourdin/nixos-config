@@ -11,13 +11,16 @@
     ./hardware-configuration.nix
   ];
 
-  # ============================== Boot ============================== #
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5;
+      };
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 5;
-
-  # ============================ Networking ============================ #
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -26,7 +29,7 @@
     networkmanager.enable = true;
     nftables.enable = true;
     firewall.allowedTCPPorts = [ 5147 ];
-    #firewall.checkReversePath = "loose";
+    firewall.checkReversePath = "loose";
   };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
