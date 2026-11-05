@@ -25,7 +25,7 @@
     hostName = "main-nixos";
     networkmanager.enable = true;
     nftables.enable = true;
-    firewall.checkReversePath = "loose";
+    #firewall.checkReversePath = "loose";
   };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
