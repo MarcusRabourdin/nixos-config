@@ -17,4 +17,5 @@ with pkgs; [
   jq
   protonmail-desktop
   proton-vpn
+  docker
 ]
