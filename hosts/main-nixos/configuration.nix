@@ -101,7 +101,7 @@
     isNormalUser = true;
     description = "Blue";
     shell = pkgs.zsh;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
   };
 
@@ -152,4 +152,6 @@
     enable = true;
     binfmt = true;
   };
+
+  virtualisation.docker.enable = true;
 }
