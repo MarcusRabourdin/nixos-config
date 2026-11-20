@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" == "c" ]; then rm /tmp/exist; echo -e "f: /tmp/exist deleted, port counter set back to 5173\n"; exit 0; fi
+
+if [ -f /tmp/exist ]; then var=$(($(cat /tmp/exist)+1)); echo "$var" > /tmp/exist; firefox -new-window http://localhost:"$var";
+else echo "5173" > /tmp/exist; firefox -new-window http://localhost:5173; fi
