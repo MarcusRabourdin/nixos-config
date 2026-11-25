@@ -2,4 +2,7 @@
 
 set -e 
 
-cd ~/pk/server && dotnet run
+cd ~/pk/server
+
+if [[ -n "$1" ]]; then Ai__BaseUrl=http://"$1" dotnet run --launch-profile http;
+else dotnet run; fi
