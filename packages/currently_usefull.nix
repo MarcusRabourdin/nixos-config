@@ -18,6 +18,6 @@ with pkgs; [
   protonmail-desktop
   proton-vpn
   docker
-  whatsapp-electron
   cargo
+  waydroid
 ]
