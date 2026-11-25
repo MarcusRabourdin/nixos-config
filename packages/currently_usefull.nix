@@ -19,5 +19,4 @@ with pkgs; [
   proton-vpn
   docker
   cargo
-  waydroid
 ]
